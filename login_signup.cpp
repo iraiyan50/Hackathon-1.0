@@ -58,7 +58,7 @@ void signup()
     char id[30], pass[30];
     system("cls");
     cout << "*********************************************************" << endl;
-    cout << "             Sales-Representative Signup Menu            " << endl;
+    cout << "             Digital CV Signup Menu            " << endl;
     cout << "*********************************************************" << endl;
     cout << "-----------Please enter the Username & Password----------" << endl;
     cout << endl;
