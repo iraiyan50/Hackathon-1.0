@@ -49,7 +49,9 @@ void login()
 {
     fflush(stdin);
     system("cls");
-    printf("");
+    printf("*****************"
+          );
+    
 }
 void signup()
 {
