@@ -1,2 +1,2 @@
 # Hackathon-1.0
-hasib nuh raiyan
+This is our first participation on Hackathon.
