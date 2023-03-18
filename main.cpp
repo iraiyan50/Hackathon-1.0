@@ -29,8 +29,9 @@ int main()
         signup();
         break;
     case 3:
-        system("cls");
+        // system("cls");
         cout << "You have made a mistake. Please try again. Thank you!!\n";
+        system("pause");
         main();
     }
 }

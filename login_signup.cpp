@@ -11,47 +11,24 @@
 #define TAB 9
 #define BCKSPC 8
 using namespace std;
-char username[30],password[30];
-void hidePass()
-{
-    char b;
-    int j;
-    while (1)
-    {
-        b = getch();
-
-        if (b == ENTER)
-        {
-            password[j] = 0;
-            break;
-        }
-        else if (b == TAB)
-        {
-            continue;
-        }
-        else if (b == BCKSPC)
-        {
-            if (j > 0)
-            {
-                j--;
-                printf("\b \b");
-            }
-        }
-        else
-        {
-            password[j] = b;
-            j++;
-            printf("*");
-        }
-    }
-}
+char username[30], password[30], name[30];
+// void hidePass()
+//{
+//     int i=0;
+//     while(1){
+//         password[i]=getch();
+//         if(password[i]==ENTER) break;
+//         else printf("*");
+//         i++;
+//     }
+//     password[i]=0;
+//
+// }
 void login()
 {
     fflush(stdin);
     system("cls");
-    printf("*****************"
-          );
-    
+    printf("*****************");
 }
 void signup()
 {
@@ -59,40 +36,42 @@ void signup()
     int c = 0;
     char id[30], pass[30];
     system("cls");
-    cout << "*********************************************************" << endl;
+    cout << *"********************************************************" << endl;
     cout << "             Digital CV Signup Menu            " << endl;
     cout << "*********************************************************" << endl;
     cout << "-----------Please enter the Username & Password----------" << endl;
+    cout << "-----------------------Avoid Spaces!!--------------------" << endl;
+
     cout << endl;
     cout << "\t1.Username: ";
-    cin >> username;
+    fflush(stdin);
+    gets(name);
+
     cout << "\t2.Password: ";
-    hidePass();
-    cin >> password;
+    // hidePass();
+    gets(password);
     // opening the file in read mode
-    strcat(username,".txt");
-    fp = fopen(username, "w+");
-    while ((fscanf(fp, "%s %s ", &id, &pass)) != EOF)
+    strcpy(username, name);
+    strcat(username, ".txt");
+    fp = fopen(username, "r");
+    if (fp == NULL)
     {
-        if (strcmp(username, id) == 0 && strcmp(password, pass) == 0)
-        // compares the info with database
-        {
-            cout << "\tCongratulations!! Your signup is complete.\n"
-                 << endl;
-            cout << "\tPlease login with your signup informations.\n"
-                 << endl;
-            c = 1;
-            break;
-        }
+        fclose(fp);
+        fp = fopen(username, "w");
+        fprintf(fp, "%s %s ", name, password);
+        fclose(fp);
+        cout << "\n\tCongratulations!! Your signup is complete."
+             << endl;
+        cout << "\tPlease login with your signup informations.\n"
+             << endl;
+        system("pause");
+        // login();
+        
     }
-    fclose(fp);
-    if (c != 1)
+    else
     {
-        cout << "\tSignup Failed! Please try again" << endl;
+        cout << "This username is not available! Please try another." << endl;
+        system("pause");
         signup();
-    }
-    else if (c == 1)
-    {
-        login();
     }
 }
