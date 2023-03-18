@@ -22,7 +22,7 @@ void hidePass()
 
         if (b == ENTER)
         {
-            password[j] = NULL;
+            password[j] = 0;
             break;
         }
         else if (b == TAB)
