@@ -81,13 +81,13 @@ struct Educational_Info
     char Degree[10];
     char cgpa[6];
 } Educational_Info;
-struct job
+struct Professional_Info
 {
     char position[30];
     char company[30];
     char Start_date[15];
     char End_date[15];
-} job;
+} Professional_Info;
 
 void Personal_Info_scan()
 {
@@ -146,9 +146,19 @@ void Personal_Info_scan()
     
     fprintf(fp, "");
 }
-
-void Professional_Info()
+void Professional_Info_Scan()
 {
+    FILE *fp;
+    char filename[30];
+    strcpy(filename, name);
+    strcat(filename, "_PfI.txt");
+    fp = fopen(filename, "w");
+    cout << *"********************************************************" << endl;
+    cout << "                    Professional Info Menu                " << endl;
+    cout << "*********************************************************" << endl;
+    cout << "-------------Please Enter the following informations-----" << endl;
+    cout << endl;
+    cout<<"\tPosition: ";cin>>
 }
 void Educational_Info()
 {

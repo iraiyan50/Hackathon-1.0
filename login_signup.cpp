@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <conio.h>
-#include"main.cpp"
+//#include"main.cpp"
 
 #define ENTER 13
 #define TAB 9
@@ -57,12 +57,12 @@ void login()
                 login();
                 break;
             case 2:
-                main();
+                //main();
                 break;
             default:
                 cout<<"Wrong Choice!\nRedirecting to Main Menu...";
                 system("pause");
-                main();
+                //main();
                 break;
         }
 
