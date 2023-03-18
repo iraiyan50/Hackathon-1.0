@@ -3,7 +3,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include "main.cpp"
+//#include "main.cpp"
 #include "login_signup.cpp"
 
 using namespace std;
@@ -57,7 +57,7 @@ struct Address
     char city[20];
     char Postcode[15];
     char country[20];
-}Address;
+};
 struct Skills_and_Achievments
 {
     // pore
@@ -73,42 +73,78 @@ struct Personal_Info
     char marital_status[20]; // if possible implement option system
     Address Present_Address;
     Address Permanent_Address;
-}Personal_Info;
+} Personal_Info;
 struct Educational_Info
 {
     char Institution[30];
     char Passing_year[7];
     char Degree[10];
     char cgpa[6];
-}Educational_Info;
+} Educational_Info;
 struct job
 {
     char position[30];
     char company[30];
     char Start_date[15];
     char End_date[15];
-}job;
+} job;
 
 void Personal_Info_scan()
 {
     FILE *fp;
     char filename[30];
     strcpy(filename, name);
-    strcat(filename, ".txt");
+    strcat(filename, "_PI.txt");
     fp = fopen(filename, "w");
     cout << *"********************************************************" << endl;
     cout << "                    Personal Info Menu                " << endl;
     cout << "*********************************************************" << endl;
-    cout << "-------------Please Enter the following informations-----"<<endl;
-    cout<<endl;
-    cout<<"\tName: "; cin>>Personal_Info.Name;
-    cout<<"\tEmail: ";
-    cout<<"\tPhone No: ";
-    cout<<"\tGender: ";
-    cout<<"\tNationality: "
-    cout<<"\t"
-    cout<<"\t"
-    fprintf(fp, "")
+    cout << "-------------Please Enter the following informations-----" << endl;
+    cout << endl;
+    cout << "\tName: ";
+    cin >> Personal_Info.Name;
+    cout << "\tEmail: ";
+    cin >> Personal_Info.email;
+    cout << "\tPhone No: ";
+    cin >> Personal_Info.phone;
+    cout << "\tGender: ";
+    cin >> Personal_Info.Gender;
+    cout << "\tNationality: ";
+    cin >> Personal_Info.Nationality;
+    cout << "\tDate of Birth: ";
+    cin >> Personal_Info.date_of_birth;
+    cout << "\tMarital Status: ";
+    cin >> Personal_Info.marital_status;
+    cout<<"\tPresent Address: \n";
+    cout<<"\t\tHouse no: ";
+    cin>>Personal_Info.Present_Address.House_no;
+    cout<<"\t\tRoad no: ";
+    cin>>Personal_Info.Present_Address.Road_no;
+    cout<<"\t\tArea: ";
+    cin>>Personal_Info.Present_Address.Area;
+    cout<<"\t\tCity: ";
+    cin>>Personal_Info.Present_Address.city;
+    cout<<"\t\tPostcode: ";
+    cin>>Personal_Info.Present_Address.Postcode;
+    cout<<"\t\tCountry: ";
+    cin>>Personal_Info.Present_Address.country;
+
+    //Permanent Address
+    cout<<"\tPermanent Address: \n";
+    cout<<"\t\tHouse no: ";
+    cin>>Personal_Info.Permanent_Address.House_no;
+    cout<<"\t\tRoad no: ";
+    cin>>Personal_Info.Permanent_Address.Road_no;
+    cout<<"\t\tArea: ";
+    cin>>Personal_Info.Permanent_Address.Area;
+    cout<<"\t\tCity: ";
+    cin>>Personal_Info.Permanent_Address.city;
+    cout<<"\t\tPostcode: ";
+    cin>>Personal_Info.Permanent_Address.Postcode;
+    cout<<"\t\tCountry: ";
+    cin>>Personal_Info.Permanent_Address.country;
+    
+    fprintf(fp, "");
 }
 
 void Professional_Info()
@@ -148,7 +184,7 @@ void DataEntry()
     }
 }
 
-int main()
+/*int main()
 {
     CV cv;
     // cv inputs
@@ -293,4 +329,4 @@ int main()
 
         return 0;
     }
-}
+}*/
