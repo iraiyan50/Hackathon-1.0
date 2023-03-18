@@ -57,8 +57,13 @@ struct Personal_Info{
     char name[30];
     char email[30];
     char phone[20];
+    char Gender[10];
+    char Nationality[20];
     char date_of_birth[15];
     char marital_status[20];//if possible implement option system
+    Address Present_Address;
+    Address Permanent_Address;
+    
 };
 void Personal_Info(){
 
