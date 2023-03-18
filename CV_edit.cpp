@@ -22,7 +22,7 @@ struct Qualification {
 struct CV {
     string name;
     string email;
-    string phone;
+    string phone;//error to be given in phone number if not number
     vector<Job> jobs;
     vector<Qualification> qualifications;
 };
@@ -44,9 +44,34 @@ void display(const CV& cv, ofstream& fout) {
         fout << "Duration: " << qualification.duration << endl << endl; // Add extra endl here
     }
 }
+void DataEntry(){
+    
+    int choice;
+    cout<<"*********************************************************" << endl;
+    cout << "              Digital CV Data Entry Menu                " << endl;
+    cout << "*********************************************************" << endl;
+    cout << "\t1.Add info\n";
+    cout << "\t2.Logout\n";
+    cout << endl;
+    cout << "Please Enter your choice: ";
+    cin >> choice;
+    switch(choice){
+        case 1:
+        
+    }
+
+
+}
+void Jobinput(){
+
+}
+void Eduinput(){
+
+}
+
 int main() {
     CV cv;
-
+    //cv inputs
     cout << "Enter your name: ";
     getline(cin, cv.name);
 
@@ -55,23 +80,22 @@ int main() {
 
     cout << "Enter your phone number: ";
     getline(cin, cv.phone);
-
     int choice = 1;
     while (choice != 0 && cv.jobs.size() < MAX_JOBS) {
         cout << "1. Add a new job" << endl;
         cout << "0. Finish" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
-        cin.ignore();
+        cin.ignore();//fflush
 
-        if (choice == 0) {
+        if (choice == 0) {//switch case diye korbo
             break;
         }
         else if (choice != 1) {
             cout << "Invalid choice. Try again." << endl;
             continue;
         }
-
+        //job inputs
         Job job;
 
         cout << "Enter your job position: ";
@@ -90,7 +114,7 @@ int main() {
 
         cout << endl;
     }
-
+    //qualifications
     choice = 1;
     while (choice != 0 && cv.qualifications.size() < MAX_QUALIFICATIONS) {
         cout << "1. Add a new qualification" << endl;
