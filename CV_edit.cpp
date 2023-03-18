@@ -148,6 +148,7 @@ void Personal_Info_scan()
 }
 void Professional_Info_Scan()
 {
+    
     FILE *fp;
     char filename[30];
     strcpy(filename, name);
@@ -158,7 +159,11 @@ void Professional_Info_Scan()
     cout << "*********************************************************" << endl;
     cout << "-------------Please Enter the following informations-----" << endl;
     cout << endl;
-    cout<<"\tPosition: ";cin>>
+    cout<<"\tPosition: ";cin>>Professional_Info.position;
+    cout<<"\tCompany: ";cin>>Professional_Info.company;
+    cout<<"\tStart Date: ";cin>>Professional_Info.Start_date;
+    cout<<"\tEnd Date: ";cin>>Professional_Info.End_date;
+    fprintf
 }
 void Educational_Info()
 {
