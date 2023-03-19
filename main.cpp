@@ -33,12 +33,14 @@ int main()
         break;
     case 3:
         system("exit");
+        return 0;
         //exits();
         break;
     default:
         // system("cls");
         cout << "You have made a mistake. Please try again. Thank you!!\n";
         system("pause");
+        return 0;
         //start();
     }
     DataEntry();
