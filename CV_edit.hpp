@@ -6,53 +6,49 @@
 #include<fstream>
 using namespace std;
 
-#define MAX_JOBS 10
-#define MAX_QUALIFICATIONS 10
 
-typedef struct job
+
+struct Address
 {
-    char position[50];
-    char company[50];
-    char duration[20];
-    char description[500];
-}job;
-typedef struct qualification
+    char House_no[10];
+    char Road_no[10];
+    char Area[20];
+    char city[20];
+    char Postcode[15];
+    char country[20];
+};
+struct Skills_and_Achievments
 {
-    char degree[50];
-    char institution[50];
-    char duration[20];
-}qualification;
-typedef struct CV
+    char skill[20];
+    char achievments[20];
+};
+struct Personal_Info
 {
-    char name[50];
-    char email[50];
-    char phone[15];//48 - 0
-    struct job jobs[MAX_JOBS];
-    int num_jobs;
-    qualification qualifications[MAX_QUALIFICATIONS];
-    int num_qualifications;
-}CV;
-void display(struct CV cv, FILE *fp)
+    char Name[30];
+    char email[30];
+    char phone[20];
+    char Gender[10];
+    char Nationality[20];
+    char date_of_birth[15];
+    char marital_status[20]; // if possible implement option system
+    Address Present_Address;
+    Address Permanent_Address;
+} ;
+struct Educational_Info
 {
-    fprintf(fp, "Name: %s\n", cv.name);
-    fprintf(fp, "Email: %s\n", cv.email);
-    fprintf(fp, "Phone: %s\n", cv.phone);
-    fprintf(fp, "\nWork Experience:\n");
-    for (int i = 0; i < cv.num_jobs; i++)
-    {
-        fprintf(fp, "Position: %s\n", cv.jobs[i].position);
-        fprintf(fp, "Company: %s\n", cv.jobs[i].company);
-        fprintf(fp, "Duration: %s\n", cv.jobs[i].duration);
-        fprintf(fp, "Description: %s\n", cv.jobs[i].description);
-    }
-    fprintf(fp, "\nEducation:\n");
-    for (int i = 0; i < cv.num_qualifications; i++)
-    {
-        fprintf(fp, "Degree: %s\n", cv.qualifications[i].degree);
-        fprintf(fp, "Institution: %s\n", cv.qualifications[i].institution);
-        fprintf(fp, "Duration: %s\n", cv.qualifications[i].duration);
-    }
-}
-void CVinput();
-void Jobinput();
-void Eduinput();
+    char Institution[30];
+    char Passing_year[7];
+    char Degree[10];
+    char cgpa[6];
+} ;
+struct Professional_Info
+{
+    char position[30];
+    char company[30];
+    char Start_date[15];
+    char End_date[15];
+} ;
+void Personal_Info_scan();
+void Professional_Info_Scan();
+void Educational_Info_Scan();
+void DataEntry();
