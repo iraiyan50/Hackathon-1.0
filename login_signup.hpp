@@ -1,5 +1,9 @@
 #pragma once
-void hidePass();
+//void hidePass();
 void login();
 void signup();
-void exit();
+//void exits();
+void industrial();
+void Academic();
+void CreateCV();
+//void start();
